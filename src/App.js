@@ -1,7 +1,20 @@
-import "./App.css";
+import React, { Component } from "react";
+import { Route, Switch, withRouter } from "react-router-dom";
 
-function App() {
-  return <div className="App"></div>;
+import LoginContainer from "./containers/LoginContainer";
+
+class App extends Component {
+  handleLogin = () => <LoginContainer />;
+
+  render() {
+    return (
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={this.handleLogin} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
